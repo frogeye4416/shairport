@@ -471,10 +471,7 @@ static void *rtp_thread_func(void *arg) {
             else {
                 // resync?
                 if (type == 0x56 && seqno == 0) {
-                    syslog(LOG_WARNING, "Suspected resync request packet received. Initiating resync.\n");
-                    pthread_mutex_lock(&ab_mutex);
-                    ab_resync();
-                    pthread_mutex_unlock(&ab_mutex);
+                    syslog(LOG_WARNING, "Suspected resync request packet received. Ignoring.\n");
                 }
             }
         }
