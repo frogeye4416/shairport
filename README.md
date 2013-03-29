@@ -25,7 +25,7 @@ Required libs:
 * openssl
 * libao when using the ao backend
 * alsa when using the alsa backend
-    
+
     make
     ./shairport --help
 
