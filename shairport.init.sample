@@ -17,9 +17,9 @@
 . /lib/lsb/init-functions
 
 NAME=ShairPort
-DAEMON="/usr/local/bin/shairport.pl"
+DAEMON="/usr/local/bin/shairport"
 PIDFILE=/var/run/$NAME.pid
-DAEMON_ARGS="-w $PIDFILE -a $NAME"
+DAEMON_ARGS="-w $PIDFILE -a $NAME -b 1024"
 
 [ -x $binary ] || exit 0
 
