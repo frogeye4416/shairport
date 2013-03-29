@@ -26,6 +26,8 @@ Required libs:
 * libao when using the ao backend
 * alsa when using the alsa backend
 
+Build:
+
     make
     ./shairport --help
 
