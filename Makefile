@@ -1,21 +1,29 @@
-#CFLAGS+=-Wall $(shell pkg-config --cflags openssl) 
+# the audio subsystem, currently supported: ao, alsa
+AUDIO:=alsa
+
+# how volume changes should be handled
+# either soft for software
+# or alsa to use the alsa mixer
+VOL:=soft
+
+# ----
+
 CFLAGS+=-Wall $(shell pkg-config --cflags openssl) -DDISABLESTUFF
 DEBUGCFLAGS+=-DDEBUGCTL 
-#DEBUGCFLAGS+=-DDEBUGCTL -DDEBUGSTUFF -DDEBUGALSA -DDEBUGBUFWRITE -g
-#DEBUGCFLAGS+=-DDEBUGBUFWRITE -g
-#DEBUGCFLAGS+=-DDEBUGSTUFF
-AUDIO:=ao
-VOL:=alsa
+
+
 ifneq ($(VOL),soft)
 	USECFLAGS:=$(shell pkg-config --cflags alsa) 
 	USELDFLAGS:=$(shell pkg-config --libs alsa)
 else
 	CFLAGS+=-DSOFT_VOL
 endif
+
 LDFLAGS+=-lm -lpthread $(shell pkg-config --libs openssl)
 USECFLAGS+=$(shell pkg-config --cflags $(AUDIO)) 
 USELDFLAGS+=$(shell pkg-config --libs $(AUDIO)) 
 USEOBJS+=socketlib.o shairport.o alac.o hairtunes.o audio_$(AUDIO).o  vol_$(VOL).o
+
 all: shairport
 
 shairport: $(USEOBJS) 
