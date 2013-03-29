@@ -7,7 +7,6 @@
 
 static snd_pcm_t *alsa_handle = NULL;
 static snd_pcm_hw_params_t *alsa_params = NULL;
-//static char* DEFAULT_CARD = "default";
 
 static char g_card[56] = "default";
 
@@ -22,24 +21,8 @@ void parse_audio_arg(char* arg)
 
 
 void audio_set_driver(char* driver) {
-    if (strlen(driver)!=0)
-    {
-//        g_card=driver;
-    } else {
-//        g_card=DEFAULT_CARD;
-    }
     syslog(LOG_INFO, "ALSA: audio_set_driver: this sets the PCM device to :%s\n",g_card);
 }
-
-/*
-void audio_set_device_name(char* device_name) {
-    syslog(LOG_DEBUG, "ALSA: audio_set_device_name: not supported\n");
-}
-
-void audio_set_device_id(char* device_id) {
-    syslog(LOG_DEBUG, "ALSA: audio_set_device_id: not supported with alsa :%s\n",device_id);
-}
-*/
 
 char* audio_get_driver(void)
 {
@@ -116,6 +99,5 @@ void audio_deinit(void)
 
 void print_audio_args()
 {
-
       printf("  --alsa_pcm=<ALSA PCM Device>          Sets ALSA PCM device (Can be found by aplay -L)\n");
 }

@@ -188,16 +188,7 @@ int hairtunes_init(char *pAeskey, char *pAesiv, char *fmtpstr, int pCtrlPort, in
         rtphost = pRtpHost;
     if(pPipeName != NULL)
         pipename = pPipeName;
-/*
-    if(pLibaoDriver != NULL)
-        audio_set_driver(pLibaoDriver);
-    if(pLibaoDeviceName != NULL)
-        audio_set_device_name(pLibaoDeviceName);
-    if(pLibaoDeviceId != NULL)
-        audio_set_device_id(pLibaoDeviceId);
-*/
-//    set_volume_param(pAlsaCtl, pAlsaVol);
-    
+
 // Initiate delay timestamp
     
     controlport = pCtrlPort;

@@ -12,26 +12,22 @@ void allocate_buffers(alac_file *alac);
 
 struct alac_file
 {
-    unsigned char *input_buffer;
-    int input_buffer_bitaccumulator; /* used so we can do arbitary
-                                        bit reads */
+  unsigned char *input_buffer;
+  int input_buffer_bitaccumulator; /* used so we can do arbitary
+                                      bit reads */
+  int samplesize;
+  int numchannels;
+  int bytespersample;
 
-    int samplesize;
-    int numchannels;
-    int bytespersample;
+  /* buffers */
+  int32_t *predicterror_buffer_a;
+  int32_t *predicterror_buffer_b;
 
+  int32_t *outputsamples_buffer_a;
+  int32_t *outputsamples_buffer_b;
 
-    /* buffers */
-    int32_t *predicterror_buffer_a;
-    int32_t *predicterror_buffer_b;
-
-    int32_t *outputsamples_buffer_a;
-    int32_t *outputsamples_buffer_b;
-
-    int32_t *uncompressed_bytes_buffer_a;
-    int32_t *uncompressed_bytes_buffer_b;
-
-
+  int32_t *uncompressed_bytes_buffer_a;
+  int32_t *uncompressed_bytes_buffer_b;
 
   /* stuff from setinfo */
   uint32_t setinfo_max_samples_per_frame; /* 0x1000 = 4096 */    /* max samples per frame? */

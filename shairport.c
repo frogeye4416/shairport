@@ -111,11 +111,6 @@ static void handle_sigterm(int signo) {
 char tAoDriver[56] = "";
 char tAoDeviceName[56] = "";
 char tAoDeviceId[56] = "";
-/*
-char tAlsaCtl[56] = "";
-char tAlsaVol[56] = "";
-*/
-
 
 int main(int argc, char **argv)
 {
@@ -170,42 +165,6 @@ int main(int argc, char **argv)
     {
       strncpy(tServerName, arg+9, 55);
     }
-/*
-    else if(!strncmp(arg, "--ao_driver=",12 ))
-    {
-      strncpy(tAoDriver, arg+12, 55);
-    }
-*/
-/*
-    else if(!strncmp(arg, "--alsa_pcm=",11 ))
-    {
-      strncpy(tAoDriver, arg+11, 55);
-    }
-*/
-/*
-    else if(!strncmp(arg, "--ao_devicename=",16 ))
-    {
-      strncpy(tAoDeviceName, arg+16, 55);
-    }
-*/
-/*
-    else if(!strncmp(arg, "--alsa_volume=",14 ))
-    {
-      strncpy(tAlsaVol, arg+14, 55);
-    }
-*/
-/*
-    else if(!strncmp(arg, "--ao_deviceid=",14 ))
-    {
-      strncpy(tAoDeviceId, arg+14, 55);
-    }
-*/
-/*
-    else if(!strncmp(arg, "--alsa_ctl=",11 ))
-    {
-      strncpy(tAlsaCtl, arg+11, 55);
-    }
-*/
     else if(!strncmp(arg, "--apname=", 9))
     {
       strncpy(tServerName, arg+9, 55);
