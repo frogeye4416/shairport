@@ -728,7 +728,7 @@ static short *buffer_get_frame(void) {
 
     abuf_t *curframe = audio_buffer + BUFIDX(read);
     if (!curframe->ready) {
-        syslog(LOG_WARNING, "\nmissing frame.\n");
+        syslog(LOG_WARNING, "missing frame.\n");
         memset(curframe->data, 0, FRAME_BYTES);
     }
     curframe->ready = 0;

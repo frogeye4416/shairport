@@ -32,8 +32,6 @@ shairport: $(USEOBJS)
 clean:
 	-@rm -rf hairtunes shairport *.o
 
-
-
 %.o: %.c Makefile
 	$(CC) $(CFLAGS) $(DEBUGCFLAGS) -c $< -o $@
 
