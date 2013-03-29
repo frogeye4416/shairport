@@ -21,19 +21,22 @@ Avahi and pkg-config must be installed.
 To configure the audio backend edit the Makefile.
 
 Required libs: 
-    * openssl
-    * libao when using the ao backend
-    * alsa when using the alsa backend
+
+* openssl
+* libao when using the ao backend
+* alsa when using the alsa backend
 
     make
     ./shairport --help
 
 For Raspbian/Ubuntu users:
+    
     apt-get install build-essential libssl-dev libao-dev libasound2-dev avahi-utils pkg-config
     git clone https://github.com/lukstei/shairport.git && cd shairport
     make
 
 For Arch linux users:
+    
     pacman -Sy avahi openssl libao alsa-lib pkg-config
     git clone https://github.com/lukstei/shairport.git && cd shairport
     make
